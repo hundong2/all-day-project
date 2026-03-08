@@ -1,0 +1,7 @@
+crewai
+crewai[tools]
+PyGithub
+GitPython
+APScheduler
+python-dotenv
+langchain-google-genai

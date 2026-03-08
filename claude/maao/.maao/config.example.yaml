@@ -1,0 +1,107 @@
+# ─── 에이전트 설정 ───
+agents:
+  claude:
+    path: "/usr/local/bin/claude"
+    enabled: true
+    daily_token_budget: 500000
+    specialties:                      # 특화 태스크 유형
+      - architecture
+      - refactoring
+      - complex_logic
+      - dependency_upgrade
+    headless:
+      flags: ["-p", "--output-format", "json", "--dangerously-skip-permissions"]
+      max_turns: 30
+      timeout: "30m"
+
+  gemini:
+    path: "/usr/local/bin/gemini"
+    enabled: true
+    daily_token_budget: 1000000
+    specialties:
+      - planning
+      - documentation
+      - spec_writing
+      - ui_design
+      - research
+    headless:
+      flags: ["-p", "--output-format", "json"]
+      timeout: "20m"
+
+  codex:
+    path: "/usr/local/bin/codex"
+    enabled: true
+    daily_token_budget: 500000
+    specialties:
+      - debugging
+      - testing
+      - ci_cd
+      - shell_scripting
+      - infrastructure
+    headless:
+      flags: ["exec", "--yolo", "--jsonl"]
+      model: "gpt-5.3-codex"
+      timeout: "25m"
+
+  copilot:
+    path: "/usr/local/bin/copilot"
+    enabled: true
+    daily_token_budget: 300000
+    specialties:
+      - github_integration
+      - code_review
+      - codebase_exploration
+      - pr_management
+    headless:
+      flags: ["--allow-all-tools", "-p"]
+      deny_tools:                     # 안전 제한
+        - "shell(rm -rf)"
+        - "shell(git push --force)"
+      timeout: "20m"
+
+# ─── PM 설정 ───
+pm:
+  default_agent: "gemini"
+  discussion_rounds: 3
+  review_max_rounds: 3
+  task_estimation:                    # 토큰 추정 기준
+    small_loc_threshold: 100          # < 100 LOC → ~10K tokens
+    medium_loc_threshold: 500         # 100-500 LOC → ~30K tokens
+    large_token_estimate: 80000       # > 500 LOC → ~80K tokens
+
+# ─── 레포지토리 ───
+repositories:
+  - url: "https://github.com/user/project"
+    local_path: "/home/user/projects/project"
+    poll_interval: "60s"
+    default_branch: "main"
+
+# ─── GitHub ───
+github:
+  token: "${GITHUB_TOKEN}"
+  api_url: "https://api.github.com"
+
+# ─── 알림 ───
+notification:
+  email:
+    to: "${MAAO_EMAIL}"
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    username: "${SMTP_USERNAME}"
+    password: "${SMTP_PASSWORD}"
+
+# ─── 워크스페이스 ───
+workspace:
+  worktree_dir: ".worktrees"
+  branch_prefix: "agent/"
+  auto_cleanup: true
+
+# ─── GitHub Actions ───
+ci:
+  enabled: true
+  wait_for_completion: true
+  timeout: "15m"
+  required_checks:                    # 머지 전 필수 통과 체크
+    - "test"
+    - "lint"
+    - "build"
