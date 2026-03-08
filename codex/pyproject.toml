@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "all-day"
+version = "0.1.0"
+description = "Dependency-free Python CLI for daily task planning"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.scripts]
+all-day = "all_day.cli:main"
+
+[tool.setuptools]
+packages = ["all_day"]
