@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "unifiedModel": "gemini-2.5-pro",
+  "subagents": [
+    {
+      "id": "analyst",
+      "role": "analyst",
+      "mission": "Analyze requirement gaps and acceptance criteria before planning starts.",
+      "skills": [
+        "plan"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "architect",
+      "role": "architect",
+      "mission": "Define boundaries, interfaces, and architecture trade-offs using code evidence.",
+      "skills": [
+        "plan"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "build-fixer",
+      "role": "build-fixer",
+      "mission": "Resolve build, type, and compile failures with minimal, low-risk diffs.",
+      "skills": [
+        "team"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "code-reviewer",
+      "role": "code-reviewer",
+      "aliases": [
+        "review"
+      ],
+      "mission": "Run severity-rated review for correctness, security, and maintainability.",
+      "skills": [
+        "review"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "code-simplifier",
+      "role": "code-simplifier",
+      "mission": "Simplify changed code for clarity and consistency without changing behavior.",
+      "skills": [
+        "review"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "critic",
+      "role": "critic",
+      "mission": "Critique plans for completeness, implementability, and spec compliance.",
+      "skills": [
+        "review"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "debugger",
+      "role": "debugger",
+      "mission": "Isolate deterministic root causes and propose reproducible bug fixes.",
+      "skills": [
+        "team"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "deep-executor",
+      "role": "deep-executor",
+      "mission": "Execute complex multi-step implementation tasks end-to-end with verification.",
+      "skills": [
+        "team"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "designer",
+      "role": "designer",
+      "mission": "Design polished UI/UX implementations with production-ready interaction details.",
+      "skills": [
+        "team"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "document-specialist",
+      "role": "document-specialist",
+      "mission": "Research official external documentation and version compatibility references.",
+      "skills": [
+        "handoff"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "executor",
+      "role": "executor",
+      "aliases": [
+        "execute"
+      ],
+      "mission": "Implement scoped tasks precisely with minimal, reviewable code changes.",
+      "skills": [
+        "team"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "explore",
+      "role": "explore",
+      "mission": "Map files, symbols, and relationships through fast read-only code search.",
+      "skills": [
+        "plan"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "git-master",
+      "role": "git-master",
+      "mission": "Prepare atomic commits and keep branch history clean and recoverable.",
+      "skills": [
+        "handoff"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "planner",
+      "role": "planner",
+      "aliases": [
+        "plan"
+      ],
+      "mission": "Create dependency-aware execution plans with explicit acceptance criteria.",
+      "skills": [
+        "plan"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "qa-tester",
+      "role": "qa-tester",
+      "mission": "Run interactive runtime checks and report reproducible validation evidence.",
+      "skills": [
+        "verify"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "quality-reviewer",
+      "role": "quality-reviewer",
+      "mission": "Detect logic defects, anti-patterns, and maintainability regressions.",
+      "skills": [
+        "review"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "scientist",
+      "role": "scientist",
+      "mission": "Execute data analysis and produce evidence-backed findings and caveats.",
+      "skills": [
+        "plan"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "security-reviewer",
+      "role": "security-reviewer",
+      "mission": "Audit vulnerabilities, trust boundaries, and authentication/authorization risks.",
+      "skills": [
+        "review"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "test-engineer",
+      "role": "test-engineer",
+      "mission": "Design robust test strategy, strengthen coverage, and harden flaky paths.",
+      "skills": [
+        "verify"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "verifier",
+      "role": "verifier",
+      "aliases": [
+        "verify"
+      ],
+      "mission": "Verify completion claims against fresh evidence and acceptance criteria.",
+      "skills": [
+        "verify"
+      ],
+      "model": "gemini-2.5-pro"
+    },
+    {
+      "id": "writer",
+      "role": "writer",
+      "aliases": [
+        "handoff"
+      ],
+      "mission": "Publish concise technical docs, migration notes, and implementation handoff.",
+      "skills": [
+        "handoff"
+      ],
+      "model": "gemini-2.5-pro"
+    }
+  ]
+}

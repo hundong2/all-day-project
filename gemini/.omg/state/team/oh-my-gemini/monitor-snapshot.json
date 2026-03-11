@@ -1,0 +1,93 @@
+{
+  "runId": "5a666197-3064-4653-ba5d-6078f7c0bad1",
+  "teamName": "oh-my-gemini",
+  "handleId": "tmux-efc14205-192d-4ebe-a159-06aab2a77d01",
+  "backend": "tmux",
+  "status": "failed",
+  "updatedAt": "2026-03-07T12:57:37.167Z",
+  "workers": [
+    {
+      "workerId": "worker-1",
+      "status": "running",
+      "lastHeartbeatAt": "2026-03-07T12:57:37.167Z",
+      "details": "pane_id=%15, command=zsh, pane=active"
+    },
+    {
+      "workerId": "worker-2",
+      "status": "done",
+      "lastHeartbeatAt": "2026-03-07T12:57:37.167Z",
+      "details": "pane_id=%17, command=env, pane=inactive, exit=0"
+    },
+    {
+      "workerId": "worker-3",
+      "status": "done",
+      "lastHeartbeatAt": "2026-03-07T12:57:37.167Z",
+      "details": "pane_id=%16, command=env, pane=inactive, exit=0"
+    }
+  ],
+  "summary": "runtime status is running; completed terminal status is required (set OMG_LEGACY_RUNNING_SUCCESS=1 only for temporary compatibility) | verify baseline did not pass",
+  "failureReason": "runtime status is running; completed terminal status is required (set OMG_LEGACY_RUNNING_SUCCESS=1 only for temporary compatibility) | verify baseline did not pass",
+  "runtime": {
+    "sessionName": "oh-my-gemini-1772888257077",
+    "commandTemplate": "printf '[oh-my-gemini] tmux runtime started\\n'",
+    "workers": 3,
+    "taskAuditLogPath": "/Users/donghun2/workspace/all-day-project-gemini/gemini/.omg/state/team/oh-my-gemini/events/task-lifecycle.ndjson",
+    "verifyBaselinePassed": false,
+    "verifyBaselineSource": "tmux-runtime",
+    "sessionExists": true,
+    "paneCount": 3,
+    "workerStatusCounts": {
+      "running": 1,
+      "done": 2,
+      "failed": 0,
+      "unknown": 0
+    },
+    "runInput": {
+      "version": 1,
+      "task": "smoke",
+      "cwd": "/Users/donghun2/workspace/all-day-project-gemini/gemini",
+      "backend": "tmux",
+      "workers": 3,
+      "maxFixLoop": 3
+    },
+    "successChecklist": {
+      "runtimeStatus": "running",
+      "treatRunningAsSuccess": false,
+      "verifyGate": {
+        "passed": false,
+        "reason": "verify baseline did not pass"
+      },
+      "roleContract": {
+        "passed": true,
+        "summary": "role output contract not applicable: selected subagent assignments absent",
+        "issues": [],
+        "applicable": false,
+        "assignmentCount": 0,
+        "outputCount": 0
+      },
+      "taskCounts": {
+        "total": 0,
+        "required": 0,
+        "failed": 0,
+        "incompleteRequired": 0,
+        "activeNonTerminal": 0
+      },
+      "taskAudit": {
+        "total": 0,
+        "byAction": {
+          "claim": 0,
+          "transition": 0,
+          "release": 0
+        },
+        "byTask": {},
+        "byReasonCode": {}
+      },
+      "health": {
+        "healthy": true,
+        "deadWorkers": [],
+        "nonReportingWorkers": [],
+        "watchdogExpired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "teamName": "oh-my-gemini",
+  "task": "smoke",
+  "backend": "tmux",
+  "workers": 3,
+  "maxFixLoop": 3,
+  "cwd": "/Users/donghun2/workspace/all-day-project-gemini/gemini",
+  "updatedAt": "2026-03-07T12:57:36.633Z"
+}
